@@ -7,6 +7,14 @@ from datetime import datetime
 
 Base = declarative_base()
 
+class User(Base):
+    __tablename__ = "users"
+    id = Column(Integer, primary_key=True)
+    username = Column(String(100))
+    password = Column(String(100))
+    email = Column(String(100))
+    created_on = Column(DateTime, default=datetime.now)
+
 class Chart(Base):
     __tablename__ = "charts"
     id = Column(Integer, primary_key=True)
@@ -18,14 +26,13 @@ class Report(Base):
     __tablename__ = "reports"
     id = Column(Integer, primary_key=True)
     name = Column(String(100))
-    description = Column(Text)
     created_at = Column(DateTime, default= datetime.now)
     
 class Dataset(Base):
     __tablename__ = "datasets"
     id = Column(Integer, primary_key=True)
     name = Column(String(100))
-    description = Column(Text)
+    path = Column(String)
     created_at = Column(DateTime, default= datetime.now)
     
 class Analysis(Base):
