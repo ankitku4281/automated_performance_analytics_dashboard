@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Home</title>
+    <title>Login</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -21,6 +21,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- htmx  -->
     <script src="https://unpkg.com/htmx.org/dist/htmx.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
@@ -29,13 +32,26 @@
     </header>
     <main>
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h1>Home</h1>
-                    <p>This is the home page.</p>
-                </div>
-            </div>
-        </div>
+            <div class="form-box">
+                <h1 class="title">Sign In</h1>
+                <div class="underline"></div>
+                <form action="" method="post">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="username" id="username" aria-describedby="emailHelp"
+                            placeholder="username" />
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" name="password" id="password"
+                            aria-describedby="passwordHelp" placeholder="password" />
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div><!--end form box-->
+        </div><!--end container-->
     </main>
     <footer>
         <!-- place footer here -->

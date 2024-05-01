@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Project</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Poppins">
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -12,15 +12,12 @@
 <body>
     <div class="container">
     <div class="form-box">
-     <h1>Sign Up</h1>
+     <h1 class="title">Sign Up</h1>
     <div class="underline"></div>   
     <form>
         <div class="input-group">
 
-            <div class="input-field">
-            <i class="fa-solid fa-user"></i>
-            <input type="text" placeholder="Name">
-            </div><!--end input field-->
+            
 
             <div class="input-field">
             <i class="fa-solid fa-at"></i>
@@ -35,12 +32,16 @@
         </div><!--end input group-->
 
         <div class="btn-field">
-            <button type="button">Sign up</button>
-            <button type="button">Sign in</button>
+            <button type="button"
+            class="signupbtn">Sign up</button>
+            <button type="button"
+            class="disable
+            singinbtn">Sign in</button>
         </div><!--end btn field-->
-        
+
     </form>
     </div><!--end form box-->
     </div><!--end container-->
+    <script>src="script.js"</script>
 </body>
 </html>
