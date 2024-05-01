@@ -196,7 +196,7 @@ def viz_employee_scatter(df, x='Age', y='MonthlyIncome', color='Attrition', size
 
 # correlation matrix
 def viz_correlation_matrix(df):
-    fig = px.imshow(df.corr(), title='Correlation Matrix', width=800, height=800)
+    fig = px.imshow(df.select_dtypes(include='number').corr(), title='Correlation Matrix', width=800, height=800)
     return fig
 
 

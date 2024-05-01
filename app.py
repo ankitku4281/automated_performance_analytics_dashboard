@@ -88,21 +88,7 @@ def results():
     fig4 = viz_education_field(df, graph='violin')
     fig5 = viz_job_role(df, graph='box', color='MaritalStatus')
     fig6 = viz_job_satisfaction(df, graph='bar')
-    fig7 = viz_job_level(df, graph='bar')
-    fig8 = viz_job_involvement(df, graph='bar')
-    fig9 = viz_performance_rating(df, graph='bar')
-    fig10 = viz_relationship_satisfaction(df, graph='bar')
-    fig11 = viz_work_life_balance(df, graph='bar')
-    fig12 = viz_environment_satisfaction(df, graph='bar')
-    fig13 = viz_employee_distribution(df, graph='box')
-    fig14 = viz_employee_income(df, graph='box')
-    fig15 = viz_income(df, graph='strip')
-    fig16 = viz_sunburst(df, path=['Department', 'JobRole','Attrition'], values='MonthlyIncome')
-    fig17 = viz_employee_scatter(df, x='Age', y='MonthlyIncome', color='Attrition', size='TotalWorkingYears')
-    fig18 = viz_correlation_matrix(df)
-    fig19 = viz_employee_3d_scatter(df, x='Age', y='MonthlyIncome', z='TotalWorkingYears', color='Attrition')
-   
-
+    
     return render_template('results.html', 
         fig1=fig1.to_html(), 
         fig2=fig2.to_html(),
@@ -110,12 +96,39 @@ def results():
         fig4=fig4.to_html(),
         fig5=fig5.to_html(),
         fig6=fig6.to_html(),
+        
+    )
+
+@app.route('/results/2', methods=['GET', 'POST'])
+def results_2():
+    df = load_data('static/dataset.csv')
+    fig7 = viz_job_level(df, graph='bar')
+    fig8 = viz_job_involvement(df, graph='bar')
+    fig9 = viz_performance_rating(df, graph='bar')
+    fig10 = viz_relationship_satisfaction(df, graph='bar')
+    fig11 = viz_work_life_balance(df, graph='bar')
+    fig12 = viz_environment_satisfaction(df, graph='bar')
+
+    return render_template('results_2.html', 
         fig7=fig7.to_html(),
         fig8=fig8.to_html(),
         fig9=fig9.to_html(),
         fig10=fig10.to_html(),
         fig11=fig11.to_html(),
         fig12=fig12.to_html(),
+    )
+@app.route('/results/3', methods=['GET', 'POST'])
+def results_3():
+    df = load_data('static/dataset.csv')
+    fig13 = viz_employee_distribution(df, graph='box')
+    fig14 = viz_employee_income(df, graph='box')
+    fig15 = viz_income(df, graph='strip')
+    fig16 = viz_sunburst(df, path=['Department', 'JobRole','Attrition'], values='MonthlyIncome')
+    fig17 = viz_employee_scatter(df, x='Age', y='MonthlyIncome', color='Attrition', size='TotalWorkingYears')
+    fig18 = viz_correlation_matrix(df)
+    fig19 = viz_employee_3d_scatter(df, x='Age', y='MonthlyIncome', z='TotalWorkingYears', color='Attrition')
+    
+    return render_template('results_3.html', 
         fig13=fig13.to_html(),
         fig14=fig14.to_html(),
         fig15=fig15.to_html(),
@@ -123,12 +136,7 @@ def results():
         fig17=fig17.to_html(),
         fig18=fig18.to_html(),
         fig19=fig19.to_html(),
-
-
     )
-
-
-
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8000, debug=True)
  
