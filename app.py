@@ -125,17 +125,14 @@ def results_3():
     fig15 = viz_income(df, graph='strip')
     fig16 = viz_sunburst(df, path=['Department', 'JobRole','Attrition'], values='MonthlyIncome')
     fig17 = viz_employee_scatter(df, x='Age', y='MonthlyIncome', color='Attrition', size='TotalWorkingYears')
-    fig18 = viz_correlation_matrix(df)
-    fig19 = viz_employee_3d_scatter(df, x='Age', y='MonthlyIncome', z='TotalWorkingYears', color='Attrition')
+    
     
     return render_template('results_3.html', 
         fig13=fig13.to_html(),
         fig14=fig14.to_html(),
         fig15=fig15.to_html(),
         fig16=fig16.to_html(),
-        fig17=fig17.to_html(),
-        fig18=fig18.to_html(),
-        fig19=fig19.to_html(),
+        fig17=fig17.to_html(),    
     )
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8000, debug=True)

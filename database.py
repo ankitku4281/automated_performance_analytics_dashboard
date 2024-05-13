@@ -47,7 +47,7 @@ class Analysis(Base):
 def get_db():
     engine = create_engine('sqlite:///apad.db')
     Base.metadata.create_all(engine)
-    return sessionmaker(bind=engine)
+    return sessionmaker(bind=engine)()
 
 def save_to_db(object):
     db = get_db()    
